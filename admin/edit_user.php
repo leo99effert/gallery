@@ -1,4 +1,5 @@
 <?php include("includes/header.php"); ?>
+<?php include("includes/photo_library_modal.php"); ?>
 <?php if(!$session->is_signed_in()) redirect("login.php"); ?>
 
 <?php 
@@ -25,9 +26,7 @@ if(isset($_POST['update'])){
     }
 }
 
-
 ?>
-
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -55,13 +54,11 @@ if(isset($_POST['update'])){
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">
-                            users
-                            <small>Subheading</small>
-                        </h1>
-                        
-                        <div class="col-md-6">
+                        <h1 class="page-header">Edit User</h1>                     
+                        <div class="col-md-6 user_image_box">
+                            <a href="#" data-toggle="modal" data-target="#photo-library">
                             <img class="img-responsive" src="<?php echo $user->image_path_and_placeholder(); ?>" alt="">
+                            </a>
                         </div>
                         <form action="" method="post" enctype="multipart/form-data">
                         <div class="col-md-6">
@@ -85,7 +82,7 @@ if(isset($_POST['update'])){
                                 <input type="password" name="password" class="form-control" value="<?php echo $user->password; ?>">
                             </div>   
                             <div class="form-group">
-                                <a class="btn btn-danger" href="delete_user.php?id=<?php echo $user->id; ?>">Delete</a>
+                                <a id="user_id" class="btn btn-danger" href="delete_user.php?id=<?php echo $user->id; ?>">Delete</a>
                                 <input type="submit" name="update" class="btn btn-primary pull-right" value="Update">
                             </div>                  
                         </div>

@@ -45,6 +45,22 @@ class User extends Db_object{
     $the_result_array = self::find_by_query($sql);
     return !empty($the_result_array) ? array_shift($the_result_array) : false;
   }
+  public function ajax_save_user_image($user_image, $user_id){
+
+    global $database;
+
+    $user_image = $database->escape_string($user_image);
+    $user_id = $database->escape_string($user_id);
+    
+    $this->filename = $user_image;
+    $this->id = $user_id;
+
+    $sql = "UPDATE " . self::$db_table . " SET filename = '{$this->filename}' ";
+    $sql .= "WHERE id = {$this->id} ";
+    $update_image = $database->query($sql);
+    echo $this->image_path_and_placeholder();
+
+  }
 } // End of User class
 
 ?>

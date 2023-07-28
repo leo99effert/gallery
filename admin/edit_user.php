@@ -14,14 +14,17 @@ if(isset($_POST['update'])){
         $user->first_name = $_POST['last_name'];
         $user->last_name = $_POST['password'];
         $user->password = $_POST['first_name'];
-
         if(empty($_FILES['user_image'])){
             $user->save();
+            redirect("users.php");
+            $session->message("The user has been updated");
         } else{
             $user->set_file($_FILES['user_image']);
             $user->upload_photo();
             $user->save();
-            redirect("edit_user.php?={$user->id}");
+            // redirect("edit_user.php?={$user->id}");
+            redirect("users.php");
+            $session->message("The user has been updated");
         }
     }
 }

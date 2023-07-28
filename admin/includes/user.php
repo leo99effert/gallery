@@ -59,8 +59,15 @@ class User extends Db_object{
     $sql .= "WHERE id = {$this->id} ";
     $update_image = $database->query($sql);
     echo $this->image_path_and_placeholder();
-
   }
+  public function delete_photo(){
+    if($this->delete()){
+      $target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->filename;
+      return unlink($target_path) ? true : false;
+    } else{
+      return false;
+    }
+  } 
 } // End of User class
 
 ?>

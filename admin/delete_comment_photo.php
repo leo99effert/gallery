@@ -10,6 +10,7 @@ $comment = Comment::find_by_id($_GET['id']);
 if($comment) {
     $comment->delete();
     redirect("comment_photo.php?id{$comment->photo_id}");
+    $session->message("The comment {$comment->id} has been deleted");
 } else{
     redirect("comment_photo.php?id{$comment->photo_id}");
 }

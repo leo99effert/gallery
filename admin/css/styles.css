@@ -1,3 +1,16 @@
+.dz-preview {
+  margin: 5px;
+  display: inline-block; /* To display the previews horizontally */
+}
+
+.my-dropzone {
+  border: 2px dashed #ccc;
+  min-height: 300px;
+  padding: 20px;
+  text-align: center;
+}
+
+
 .admin-photo-thumbnail {
   width: 200px;
   border-radius: 5px;

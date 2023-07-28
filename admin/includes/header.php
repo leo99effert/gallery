@@ -32,7 +32,13 @@
 
     <!-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="css/summernote.css">
-
+    
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css"
+    type="text/css"
+    />
 
     <link href="css/styles.css" rel="stylesheet">
 

@@ -40,6 +40,17 @@
       }
     </script>
 
+    <script>
+      // Dropzone has been added as a global variable.
+      const dropzone = new Dropzone("div.my-dropzone", { url: "upload.php", previewTemplate: `
+      <div class="dz-preview dz-file-preview">
+        <div class="dz-image">
+          <img data-dz-thumbnail />
+        </div>
+      </div>
+    ` } );
+    </script>
+
 </body>
 
 </html>

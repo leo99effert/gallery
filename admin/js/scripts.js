@@ -51,4 +51,16 @@ $(document).ready(function() {
     });
   });
 
+
+
+  $(".info-box-header").click(function(){
+    $(".inside").slideToggle("fast");
+    $("#toggle").toggleClass("glyphicon-menu-down glyphicon , glyphicon-menu-up glyphicon");
+  });
+
+  $(".delete_link").click(function(){
+    return confirm("Are you sure you want to delete this item?");
+  });
+
 });
+

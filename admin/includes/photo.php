@@ -10,13 +10,15 @@ class Photo extends Db_object{
     'filename', 
     'alternate_text',
     'type', 
-    'size'
+    'size',
+    'user_id'
   );
   public $id;
   public $title;
   public $caption;
   public $description;
   public $alternate_text;
+  public $user_id;
   public $errors = array();
   public function picture_path(){
     return $this->upload_directory . DS . $this->filename;
